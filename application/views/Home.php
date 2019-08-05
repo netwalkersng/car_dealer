@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,16 +16,18 @@
   
    <header>
     <div data-top-bar >
-          <div data-sign-in ><i class="fa fa-user fa-2x" aria-hidden="true"></i>Sign In</div>
+          <div data-sign-in ><i class="fa fa-user fa-2x" aria-hidden="true"></i><span>Sign In</span></div>
           <div data-address><i class="fa fa-home fa-2x" aria-hidden="true"></i> 12 Street, Los Angeles, CA, 94101</div>
           <div data-phone><i class="fa fa-phone fa-2x" aria-hidden="true"></i>+1234 567-8901</div>
           <div data-cart ><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="badge badge-secondary">0</span></div>
       </div>
     
 
-      <div data-row1>
+      <div data-row1 id="data-row1">
+        <div>
         <header><h1>Moto<span>Sellers</span></h1></header>
-        <div data-banner-ad><img src="https://via.placeholder.com/728x90.png?text=728x90"></div>
+        </div>
+        <div data-banner-ad><img src="https://via.placeholder.com/728x90.png?text=728x90" class="img-fluid"></div>
       </div>
 
       <nav data-nav >
@@ -84,7 +86,7 @@
                               <span class="sr-only">Next</span>
                             </a>
                           </div>
-                    </div>
+                          </div>
                           <!-- carousel ends -->
         </div>
 
@@ -225,8 +227,7 @@
 
               <div data-car-spec>
                <h6> Lamborghini Aventador '2012</h6>
-                <ul>
-                
+                <ul>                
                   <li class="subheading"> <span class="heading">Location:</span> <span class="inner-text">Lagos / Ikeja</span>
                   <li class="subheading"> <span class="heading">Engine:</span><span class="inner-text"> 6 cm³ V16, Petrol</span></li>
                   <li class="subheading"> <span class="heading">Kilometer:</span> <span class="inner-text">600km</span></li>
@@ -322,7 +323,7 @@
           <p class="subheading">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-        </p>
+          </p>
         </div>
 
         <div data-col2>

@@ -102,261 +102,363 @@ body{
   padding: 0;
   color: rgb(39, 38, 38);  
 }
-
+ul{
+  padding: 0;
+  list-style-type: none;;
+}
 [data-top-bar-container]{
-  background-color: #f4f4f4;
+    background-color: #f4f4f4;
     border-bottom: 1px solid rgba(0,0,0,0.1);  
     padding: 1em 0;
-    color: #757373;
-    font-size: 80%;
-    display: flex;
-    padding-left: 2em;
-    padding-right: 2em;
-    display: flex; 
-    flex-direction: column;
+     color: #757373;
+     font-size: 80%;
+      
 }
 
-[data-address]{
+[data-top-bar ]{
+  display: flex;
+  flex-direction: row;
+  
+}
+[data-top-bar] [data-cart]{
+  /* margin-right: 1em; */
   margin-left: auto;
-}
+  
+} 
 
-[data-top-bar]{
-  display: flex; 
-  flex-wrap: wrap;
-  margin-bottom: 1em;
-}
-.fa{
+[data-top-bar] [data-sign-in]{
+  margin-left: 1em;
+  margin-right: 1em;
+} 
+
+[data-top-bar-container] [data-phone]{
+  margin-left: 1em;
+  margin-top: 1em;
  
-  color: #ff600a;  
+} 
+
+
+.fa {
+  margin-right:.2em;
+  color: #ff600a;
+ 
 }
 
-[data-sign-in] span{
-  display: none;
+
+/* [data-top-bar] [data-sign-in]{
+    margin-left: 10em;
 }
 
-[data-top-bar-container] div{
-  /* margin-right: 2em; */
+[data-top-bar] [data-address]{
+    margin-left: auto;
+    padding: 0;
+   
+}
+[data-top-bar] [data-address], [data-top-bar] [data-phone]{
+   margin-right: 2em;
+}
+[data-top-bar] [data-cart]{
+  margin-right: 10em;
+} */
+@media(max-width: 600px){
+  #container{
+
+    
+  
+  }
+  #data-row1{
+   flex-direction: column;
+   margin-left: 0em;
+   margin-top: 1em;
+   width: 100%;
+  }
+
+  #data-row1 [data-banner-ad]{
+    margin-left: 0;
+    margin-right: 0em;
+    width: 400px;
+    
+  }
+  #data-row1 [data-banner-ad] img{
+   margin-left: 0;
+   margin-right: 0em;
+  }
 }
 
-[data-cart]{
-   margin-left: .5em;
-}
+
 [data-row1]{
   display: flex;
-  flex-direction: column;
-  margin-bottom: 1em;
-}
-[data-cart] span{
-position: relative;
-left: -0.5em;
-top: -1.5em;
-}
-
-header{
-  display: flex;
-  margin-left: 1em;
-  margin-right: 1em;
-  flex-flow: column;
-}
-header  h4{
-  margin-left: auto;
-  
-  margin-top: -2em;
-  
-}
-
-
-header  ul{
-  list-style-type: none;
-  margin-left: 1em;
-  margin-right: 1em;
-  padding: 0;
-  display: none;
-  /* border: thin solid rgb(240, 238, 238); */
-  
- 
-}
-header ul li{
- 
-  padding: .3em;
-  color: white;
-  color: rgb(39, 38, 38);    
-  margin: .5em;
- 
-  
-}
-
-
-[data-container]{
-  margin: 1em;
-}
-
-[data-query-filter]{
-  display: flex;
-  background-color: rgb(240, 238, 238);
-  padding: 1em;
-  /* border-radius: 1em; */
- 
-}
-[data-single-car-slider]{
-  margin-bottom: 0em;
-}
-
-[data-query-filter] select{
- 
-  margin-bottom: .5em;
-  height: 2em;
-  padding-top: 0.1em;
-  /* flex-basis: 1; */
- 
-}
-[data-query-filter] [data-col1] select,  [data-query-filter] [data-col2] select{
-   /* width: 250%; */
-}
-
-[data-query-filter] select option{
-  margin-top: 0;
-}
-[data-query-filter] [data-col1]{
- /* flex-basis: 50%; */
- flex-grow: 1;
- flex-shrink: 1;
- margin-right: 1em;
-  
-}
-
-[data-query-filter] [data-col2]{
-  /* padding-right: 8em; */
-  margin-left: auto;
-  /* flex-basis: 50%; */
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
-
-
-[data-query-filter] label{
-  margin-bottom: 0em;
-}
-
-[data-switch-icons]{
-  display: flex;
-}
-
-[data-switch-icons] span{
-  margin-top: .3em;
-  margin-left: auto;
-}
-[data-main] [data-featured-cars]{
-  display: flex;
-
-  /* flex-direction: row; */
-
-  
-}
-
-[data-main] [data-featured-cars]{
-  display: flex;
-
-  /* flex-direction: row; */
-
-  
-}
-
-[data-switch-icons]{
-  border-bottom: thin solid#4e5256;  
-  /* background-color: #6e4f4f; */
-  margin-bottom: 1em;
+  flex-direction: row;
+  margin-left: 10em;
   margin-top: 2em;
-
+  margin-bottom: 2em;
+  
 }
 
-[ data-car-spec]{
-  /* background-color: red; */
-  margin-bottom: 1em;
-  font-size: 70%;
+[data-row1] [data-banner-ad]{
+  margin-left: auto;
+  margin-right: 10em;
+  
 }
 
-#data-featured-cars-img{
-  /* background-color: rgb(102, 82, 82); */
-  /* width: 25%; */
+[data-row1] header {
+  align-self: center;
+  
 }
 
-[ data-car-spec] ul{
-  list-style-type: none;
-  padding-left: 0;
-
+[data-row1] header h1 {
+  color: #4e5256;
+  
 }
 
-[ data-car-spec] .heading{
- font-weight: bold;
- color: #4e5256;  
- margin-left: 1em;
+
+[data-row1] header span {
+  color:  #ff600a;
+  
 }
 
-[ data-car-spec] p{
-  color: #4e5256;  
- margin-left: 1em;
- font-weight: bold;
+[data-nav]{
+  background-color: #4e5256;
+  margin-bottom: 2em;
+  margin: 0 10em;
+  
+}
+[data-nav] ul{
+  list-style: none;
+  padding: 0;
 }
 
-[ data-car-spec] p span{
-  margin-left: 1em;
-}
-
-[data-featured-tag]{
-  position: relative;
-  top: -5em;
-  background-color: #ff600a;
+[data-nav] ul li{
+  display: inline-block;
+  padding: 1em; 
   color: white;
-  padding: .2em;
+  font-size: 110%;
+  border-left: .0009em solid  rgb(148, 144, 144); 
 }
 
+[data-nav] ul li.active{
+  color: #ff600a;
+  font-weight: bold;
+
+}
+
+
+
+
+
+.header .row div{
+   color: #757373;
+   font-size: 80%;
+}
+
+.badge{
+  position: relative;
+  left: -1.5em;
+  top: -1.5em;  
+
+}
+[data-row2]{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+  margin: 2em 10em;
+}
+
+[data-row2] [data-single-car-slider]{
+  
+  /* background-blend-mode: multiply;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center; */
+  /* opacity: 0.2; */
+  width: 60%;
+}
+
+[data-row2] [data-query-filter]{
+  background-color:rgb(221, 216, 216);
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  
+}
+
+[data-row2] [data-col1]{
+  margin-left: auto;
+}
+
+[data-row2] [data-col2]{
+  margin-right: 1em;
+  margin-left: 2em;
+}
+
+[data-row2] select{
+  width: 10.7em;
+}
+
+
+
+[data-row2] select>option{
+ 
+  background-color:  #ff600a;
+}
+
+.form-control:focus {
+  border-color:#ff600a;
+  box-shadow: inset 0  1px #9c491c;;
+}
+
+[data-row-3]{
+  
+  /* background-color: #9c491c; */
+  margin-bottom: 2em;
+  margin-left: 10em;
+  margin-right: 10em;
+  display: flex;
+  flex-direction: row;
+  
+}
+[data-main]{
+
+  width: 70%;
+  margin-right: 2%;
+ 
+}
+ [data-switch-icons]{
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  
+  padding-bottom: .5em;
+  border-bottom: thin solid rgb(63, 61, 61);
+  margin-bottom: 2em;
+
+}
+[data-switch-icons] h4{
+margin-top: -.5em;
+margin-bottom: .7em;
+}
+[data-switch-icons] .fa-th-large{
+  margin-left: auto;
+
+}
+
+
+[data-featured-cars]{
+  display: flex;
+  flex-direction: row;
+ 
+ 
+}
+
+ [ data-car-spec]{
+  width: 40%;
+  /* margin-left:.5em; */
+  margin-bottom: 2em;
+  font-size: 80%;
+  /* background-color: green; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+ 
+  
+}
+
+
+
+[data-price]{
+
+  /* background-color: #999c99; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  margin-left: auto;
+  
+}
+[data-side] h4{
+  padding-bottom: 1.2em;
+  border-bottom: thin solid rgb(63, 61, 61);
+  margin-top: .1em;
+  margin-bottom: 1em;
+}
+
+
+
+.subheading{
+  color: #7b7d7e; 
+}
+
+.stand-out{
+  background-color: #1a0900;
+}
+[data-featured-tag]{
+  display: inline;
+  color: white;
+  position: relative;
+  top: -12em;
+
+  padding: .5em; 
+}
+.heading{
+  color: #1a1b1b;
+   margin-right: 1em;
+}
+[data-side]{
+ 
+  /* background-color: #774a31; */
+  margin-left: 4em;;
+  width: 35%;
+  
+  /* background-color: red; */
+}
+[thumb-nail-image]{
+  width: 100px;
+}
+[thumb-nail-desc]{
+ margin: 0  1em 2em 1em;
+}
+
+[data-car-spec] .inner-text{
+  float: right;
+ margin-right: 0;
+
+}
 [thumb-nail-container]{
   display: flex;
-  margin: 1em 0;
 
 }
-[ thumb-nail-image]{
-  margin-right: .5em;
+[thumb-nail-container] .fa{
+  font-size: 70%;
+  margin-right: 0;
 }
-[ data-car-spec] .btn-dark{
+
+[thumb-nail-container] .fa-comment{
+  
   margin-left: 1em;
 }
-[thiddenumb-nail-container]{
-  display: flex;
+[thumb-nail-desc] div{
+  font-size: 80%;
 }
-[thiddenumb-nail-image]{
-  margin-bottom: 2em;
-  margin-right: 1em;
-}
-
 [data-footer]{
-  background-color: #6b6b6b;
+  background-color: #4e5256;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
+  justify-content: space-evenly;
   font-size: 80%;
-  padding-bottom: 2em;
 }
 
 [data-footer-row1]{
   display: flex;
-  flex-direction: column;
-  /* background-color: whiddenite; */
+  flex-direction: row;
+  /* background-color: white; */
 }
 [data-footer-row1] [data-col1]{
-  margin-left: 1em;
+  margin-left: 10em;
 }
 
 [data-footer-row1] [data-col1], [data-footer-row1] [data-col2],[data-footer-row1] [data-col3],[data-footer-row1] [data-col4]{
-  /* widthidden: 20%; */
+  width: 20%;
  padding: 1.5em;
  color: white;
-}
-
-[data-footer-row1] ul{
-  padding-left: 1em;
 }
 [data-footer-row1] ul li, [data-footer-row1] h4{
   border-bottom: thin solid rgb(200, 198, 198);
@@ -384,23 +486,15 @@ header ul li{
   color: #ff600a;
 }
 [data-footer] [ data-col5]{
-  margin-left: 1em;
-  margin-right: 1em;
+  margin-left: 10em;
+  margin-right: 10em;
   color: rgb(200, 198, 198);
-  text-align: center;
-  /* margin-bottom: 2em; */
+  margin-bottom: 2em;
 }
 
-[ data-footer] [data-col3] .fa{
-  margin-right: 1em;
+[data-footer] [ data-col5] span{
+  float: right;
 }
-[data-side]{
-  font-size: 80%;
-  margin-top: 2em;
-}
-
-
-
 
 /* ==========================================================================
    Helper classes
@@ -435,7 +529,6 @@ header ul li{
   width: 1px;
   /* 1 */
 }
-
 
 /*
 * Extends the .sr-only class to allow the element
