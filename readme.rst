@@ -1,29 +1,47 @@
 ###################
-What is CodeIgniter
+Car Dealer Web App
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+
+    
+    Responsive HD design with Bootstrap and Codeigniter PHP framework
+    
+    - 2 types of search filter option(Basic options and Advance Options)
+    Visitors can search by Category, Brand, Model, Mileage, City, State, Location radious and more…
+    - 3 types of view for results(Grid view, List view and Map view)
+    - Visitors can find car details and location from detail page
+    - Visitors can contact seller via email from detail page
+    - Car review option (Admin can enable/disable)
+    - Built in pages for showing cars by Location, Category and Seller
+    - Integrated Blog, News, Article Manager
+    - Admin can create unlimited page from Admin panel
+    - Disqus and Facebook comment system intigrated
+    - 3 types of login options(Email Signup, Facebook Login, Google Login)
+    - Admin can take payment from seller for each post publishing
+    - Admin can take payment from seller for make a post featured
+    - Admin can create different packages
+    - Paystack
+    - Admin can create unlimited car brand models
+    - Admin can create unlimited predefined City States
+    - Admin can send news letter to all sellers
+    - Admin can manage transmissions, conditions, fuel types
+    - Admin can add more fields to car form from Custom field manager on admin panel
+    - Admin can create unlimited widgets
+    - SEO friendly url
+    - SMTP email config option
+
+    and lot more
+
 
 *******************
 Release Information
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+This repo contains in-development and mproduction code for future releases. To download the
 
 **************************
 Changelog and New Features
 **************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
 
 *******************
 Server Requirements
@@ -39,32 +57,21 @@ issues, as well as missing features.
 Installation
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
 *******
 License
 *******
 
 Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+agreement 
 
 *********
 Resources
 *********
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
+-
 ***************
 Acknowledgement
 ***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+The Netwalkers NG team would like to thank all the
+contributors to the Car Dealer project and you.
