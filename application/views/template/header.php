@@ -11,6 +11,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title><?php echo $title; ?></title>
-   
-  </head>
+    </head>
   <body>
+  
+  <div data-top-bar-container>
+    <div data-top-bar >
+        <div data-sign-in ><i class="fa fa-user fa-2x" aria-hidden="true"></i><span>Sign In</span></div>
+            <div data-address><i class="fa fa-home fa-2x" aria-hidden="true"></i> <span>12 Street, Ikeja, Lagos, 94101</span></div>
+             <div data-cart ><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="badge badge-secondary">0</span></div>
+            </div>
+        <div data-phone><i class="fa fa-phone fa-2x" aria-hidden="true"></i>+1234 567-8901</div>
+    </div>
+
+   <header>
+      <h1> MotoSellers</h1>
+      <h4 ><i class="fa fa-bars fa-2x" aria-hidden="true" onclick="toggle('listItem')"> </i></h4>
+      
+      
+      <nav>
+          <ul id="listItem">
+              <li>Inventory</li>
+              <li>Blog</li>
+              <li>Sell My Car</li>
+              <li>Shop</li>
+          </ul>
+          
+      </nav>
+      
+      <img src="https://via.placeholder.com/728x90.png?text=banner ad" class="d-block w-100" alt="...">
+   </header>
