@@ -5,5 +5,11 @@
 		$password = MD5($password);
 		$query = $this->db->query($sql, array($password, $user_email));
 		return $query->num_rows();
-	}
+    }
+    
+    public function email_count($email){
+        $sql = "select email FROM `carbiz_users` WHERE `user_email` = ?";
+        $query = $this->db->query($sql, array($email));
+        return $query->num_rows();
+    }
  }

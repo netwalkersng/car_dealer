@@ -44,9 +44,8 @@ class Account extends CI_Controller {
 		echo "trying to login";
 	}
 	public function email_exist($email){
-		$sql = "select email FROM `carbiz_users` WHERE `user_email` = ?";
-		$query = $this->db->query($sql, array($email));
-		if($query->num_rows()!=1){
+		
+		if($this->account_model->email_count($email)!=1){
 			return false;
 		}
 		else{
