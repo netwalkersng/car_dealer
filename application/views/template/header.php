@@ -16,7 +16,7 @@
   
   <div data-top-bar-container>
     <div data-top-bar >
-        <div data-sign-in ><i class="fa fa-user fa-2x" aria-hidden="true"></i><span>Sign In</span></div>
+        <div data-sign-in ><i class="fa fa-user fa-2x" aria-hidden="true"></i><span><a href="<?php echo $this->global_func->toggle_sign_in_url(); ?>"><?php echo $this->global_func->toggle_sign_in(); ?></a></span></div>
             <div data-address><i class="fa fa-home fa-2x" aria-hidden="true"></i> <span>12 Street, Ikeja, Lagos, 94101</span></div>
              <div data-cart ><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><span class="badge badge-secondary">0</span></div>
             </div>

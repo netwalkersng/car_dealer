@@ -39,7 +39,7 @@
             <input type="email" id="email" class="form-control" placeholder="Please Enter your Email" name="email" value="<?php echo set_value('email')?>"  required="">
 
             <label for="password"  required="" >Password</label>
-            <input type="password" maxlength="16" id="password" class="form-control"  name="password" required=""><br>
+            <input type="password" maxlength="16" id="password" class="form-control"  name="password" required="" value="<?php echo set_value('password')?>"><br>
             
             <input type="submit" value="Sign In" class="btn btn-primary" > <br>
             <a href="">Forgot Password</a> or <a href="">Register</a>

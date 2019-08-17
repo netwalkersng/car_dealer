@@ -12,4 +12,14 @@
         $query = $this->db->query($sql, array($email));
         return $query->num_rows();
     }
+    public function get_user_id_by_email($email="test"){
+        $sql = "SELECT id FROM `carbiz_users` WHERE `user_email` = ?";
+        $query = $this->db->query($sql, array($email));
+        return $query->row_array();
+    }
+    public function get_user_details_by_email($email="test"){
+        $sql = "SELECT * FROM `carbiz_users` WHERE `user_email` = ?";
+        $query = $this->db->query($sql, array($email));
+        return $query->row_array();
+    }
  }

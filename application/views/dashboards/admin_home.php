@@ -170,7 +170,7 @@
         <h1>Blank Page</h1>
     
         <hr>
-        <p>This is a great starting point for new custom pages.</p>
+        <p>This is a great starting point for new custom pages.	<?php  echo $this->session->user_id;?></p>
 
       </div>
       <!-- /.container-fluid -->

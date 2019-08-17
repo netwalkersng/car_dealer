@@ -19,7 +19,7 @@ class Admin extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
+	{	$this->load->model('account_model');
 		$this->load->view('dashboards/admin_home');
 	}
 }
