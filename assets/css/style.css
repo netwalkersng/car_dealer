@@ -255,11 +255,14 @@ div[data-query-filter]{
 .fa{
  
   color: #ff600a;  
+  margin-right: .3em;
 }
 
-[data-sign-in] span{
-  display: none;
+[data-sign-in] .fa-user{
+  /* display: none; */
+ 
 }
+
 
 [data-top-bar-container] div{
   /* margin-right: 2em; */
@@ -275,7 +278,7 @@ div[data-query-filter]{
 }
 [data-cart] span{
 position: relative;
-left: -0.5em;
+left: -1em;
 top: -1.5em;
 }
 
@@ -593,7 +596,9 @@ a{
       width: 100%;
     }
   }
-
+.required{
+  color: rgb(224, 126, 126);
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

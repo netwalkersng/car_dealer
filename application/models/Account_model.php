@@ -1,10 +1,19 @@
 <?php
  class Account_model extends CI_Model{
     public function password_from_email_rows($password= 123456, $user_email='test@account.com'){
-		$sql = "select `user_email`, `password` FROM `carbiz_users` WHERE password = ? AND user_email = ?";
-		$password = MD5($password);
-		$query = $this->db->query($sql, array($password, $user_email));
-		return $query->num_rows();
+		$sql = "select `user_email`, `password` FROM `carbiz_users` WHERE user_email = ?";
+        // $password = MD5($password);
+        $query = $this->db->query($sql, array($user_email));
+       if($query->num_rows()==1){
+           $hash = $query->row()->password;
+            if(password_verify($password, $hash)){
+                return 1;
+            }else{
+                return 0;
+            }
+       }else{
+            return 0;
+       }
     }
     
     public function email_count($email){
@@ -22,4 +31,5 @@
         $query = $this->db->query($sql, array($email));
         return $query->row_array();
     }
+    
  }

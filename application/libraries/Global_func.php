@@ -45,11 +45,11 @@ class Global_func  {
         
         if(isset($CI->session->user_id)){
            
-            return  $str = 'account/logout';
+            return  $str = base_url('account/logout');
             
                                 
         }else{
-            return  $str = 'account';
+            return  $str = base_url('account');
             // echo $CI->session->user_id;
        }
     }
