@@ -110,7 +110,7 @@ body{
     color: #757373;
     font-size: 80%;
     padding-left: 2em;
-    padding-right: 2em;
+    padding-right: 1em;
     display: flex; 
     flex-direction: column;
 }
@@ -255,14 +255,12 @@ div[data-query-filter]{
 .fa{
  
   color: #ff600a;  
-  margin-right: .3em;
 }
 
-[data-sign-in] .fa-user{
+[data-sign-in] span{
   /* display: none; */
- 
+  margin-left: .5em;
 }
-
 
 [data-top-bar-container] div{
   /* margin-right: 2em; */
@@ -550,7 +548,9 @@ a{
    
 
   }
-  
+  .required{
+    color: rgb(218, 101, 101);
+  }
   div[data-tryLogin-row1] div[data-row1-col1], div[data-tryLogin-row1] div[data-row1-co2]{
     border-radius: 10px 10px 10px 10px;
     -moz-border-radius: 10px 10px 10px 10px;
@@ -596,9 +596,7 @@ a{
       width: 100%;
     }
   }
-.required{
-  color: rgb(224, 126, 126);
-}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

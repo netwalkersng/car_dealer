@@ -5,7 +5,7 @@
 <div data-container><!-- #start of container -->
 
 <div data-tryLogin-row1><!-- startt of  data-tryLogin-row1-col1 -->
-    <div><span class="subheading">Home/</span><span class="heading">Login</span></div>
+    <div><span class="subheading"><a href="<?php echo site_url(); ?>" class="subheading">Home</a>/</span><span class="heading">Register</span></div>
     <div data-container>
     <div data-row1-col1>
         <h4>Register for New Account</h4>

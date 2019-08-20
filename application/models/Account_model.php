@@ -31,5 +31,26 @@
         $query = $this->db->query($sql, array($email));
         return $query->row_array();
     }
+
+    function confirm_email($email,$code)
+	{
+		$query = $this->db->get_where('carbiz_users',array('user_email'=>$email,'confirmation_key'=>$code));
+		if($query->num_rows()>0)
+		{
+			$this->load->helper('date');
+			$datestring = "%Y-%m-%d %h:%i:00";
+			$time = time();
+
+			$data['confirmed'] = 1;
+			$data['confirmed_date'] = mdate($datestring, $time);
+			$data['confirmation_key'] = '';
+			$this->db->update('carbiz_users',$data,array('user_email'=>$email));
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
+	}
     
  }

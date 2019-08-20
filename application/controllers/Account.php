@@ -105,22 +105,92 @@ class Account extends CI_Controller {
 			$this->load->model('user_model');
 			$user_id = $this->user_model->insert_user_data($userdata);
 			$this->user_model->add_user_meta($user_id, 'company_name', $this->input->post('company_name'));
-
-			$this->load->library('email');
-
-			$this->email->from('odinaka@yopmail.com', 'Odinaka');
-			$this->email->to('isaacodinakafranklin@gmail.com');
 			
+			$this->send_confirmation_email($userdata);	
+			$this->send_admin_notification_email();
+			echo "success";
 
-			$this->email->subject('Email Test');
-			$this->email->message('Testing the email class.');
-
-			$this->email->send();
-			echo "end";
             // add_user_meta($user_id,'phone',$this->input->post('phone'));
 			// $this try_register();
 		}
 	}
+
+	#send a email to the admin
+	public function send_admin_notification_email()
+	{
+		$val = $this->get_admin_email_and_name();
+		$admin_email = $val['admin_email'];
+		$admin_name  = $val['admin_name'];
+		
+		$subject = "New user signup notification";		
+		$body = "Recently a new user signed up to your site.";
+		
+		$this->load->library('email');
+		
+		$this->email->from($admin_email, $admin_name);
+		$this->email->to($admin_email);
+		$this->email->subject($subject);		
+		$this->email->message($body);		
+		$this->email->send();
+
+		
+	}
+	#get web admin name and email for email sending
+	public function get_admin_email_and_name()
+	{
+		$this->load->model('admin/options_model');
+		$values = $this->options_model->getvalues('webadmin_email');
+
+		
+		if($values)
+		{
+			$data['admin_email'] = (isset($values->webadmin_email))?$values->webadmin_email:'admin@'.$_SERVER['HTTP_HOST'];
+			$data['admin_name']  = (isset($values->webadmin_name))?$values->webadmin_name:'Admin';
+		}
+		else
+		{
+			$data['admin_email'] = 'admin@'.$_SERVER['HTTP_HOST'];
+			$data['admin_name']  = 'Admin';		
+		}
+
+
+		return $data;
+	}	
+
+
+
+	#send a confirmation email with confirmation link
+	public function send_confirmation_email($data=array('username'=>'sc mondal','useremail'=>'shimulcsedu@gmail.com','confirmation_key'=>'1234'))
+	{
+		$val = $this->get_admin_email_and_name();
+		$admin_email = $val['admin_email'];
+		$admin_name  = $val['admin_name'];
+		$link = site_url('account/confirm/'.$data['user_email'].'/'.$data['confirmation_key']); 
+		
+		$this->load->model('admin/system_model');
+		$tmpl = $this->system_model->get_email_tmpl_by_email_name('confirmation_email');
+		$subject = $tmpl->subject;
+		$subject = str_replace("#username",$data['user_email'],$subject);
+		$subject = str_replace("#activationlink",$link,$subject);
+		$subject = str_replace("#webadmin",$admin_name,$subject);
+		$subject = str_replace("#useremail",$data['user_email'],$subject);
+
+		
+		$body = $tmpl->body;
+		 $body = str_replace("#username",$data['user_email'],$body);
+		 $body = str_replace("#activationlink",$link,$body);
+		 $body = str_replace("#webadmin",$admin_name,$body);
+		 $body = str_replace("#useremail",$data['user_email'],$body);
+
+				
+		$this->load->library('email');
+		$this->email->from($admin_email, $admin_name);
+		$this->email->to($data['user_email']);
+		$this->email->subject($subject);		
+		$this->email->message($body);		
+		$this->email->send();
+	}
+
 	public function did_select($select_message){
 		if($select_message == 'select..'){
 			return FALSE;
@@ -128,5 +198,33 @@ class Account extends CI_Controller {
 			return TRUE;
 		}
 
+	}
+
+	#confirmation email link points here
+	public function confirm($email='',$code='')
+	{
+		$this->load->model('account_model');
+		$res = $this->account_model->confirm_email($email,$code);
+
+		if($res==TRUE)
+		{
+			$this->session->set_flashdata('msg', '<div class="alert alert-success"> email confirmed. <a href="'. base_url('account').'">Login</a> </div>
+			');
+			redirect(site_url('account/showmsg'));		
+		}
+		else
+		{
+			$this->session->set_flashdata('msg', '<div class="alert alert-danger"> email confirmation failed</div>');
+			redirect(site_url('account/showmsg'));
+		}
+	}
+	
+	#load any msg on front end
+	public function showmsg()
+	{
+			$data['title'] = 'Motosellers Confirmation messages';
+			$this->load->view('template/header', $data);
+			$this->load->view('msg_view');
+			$this->load->view('template/footer');	
 	}
 }

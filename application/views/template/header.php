@@ -30,7 +30,9 @@
       
       <nav>
           <ul id="listItem">
+              <li>Home</li>
               <li>Inventory</li>
+              <li>My Dashboard</li>
               <li>Blog</li>
               <li>Sell My Car</li>
               <li>Shop</li>
