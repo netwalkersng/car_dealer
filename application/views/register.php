@@ -55,7 +55,7 @@
             <input type="password" maxlength="12" id="password" class="form-control"  placeholder="Please choese a password" name="password" required="" value="<?php echo set_value('password')?>">
             <label for="password_again"  >Password Again<span class="required">*</span></label>
             <input type="password" maxlength="12" id="password_again" class="form-control"  placeholder="Enter your password again" name="password_again" required="" value="<?php echo set_value('password_again')?>"><br>
-            <input type="submit" value="Sign In" class="btn btn-primary" > <br>
+            <input type="submit" value="Register" class="btn btn-primary" > <br>
              Already have an account ? <a href="<?php echo base_url('account')?>">Login Instaed</a>
         <?php echo form_close()?>
     </div>

@@ -53,4 +53,32 @@
 		}
 	}
     
+    function is_email_exists($email)
+	{
+		$query = $this->db->get_where('carbiz_users',array('user_email'=>$email));
+		return $query->num_rows();
+    }
+    
+    function set_recovery_key($user_email)
+	{
+		$recovery_key = uniqid();
+		$this->db->update('carbiz_users',array('recovery_key'=>$recovery_key),array('user_email'=>$user_email));
+		
+		$query = $this->db->get_where('carbiz_users',array('user_email'=>$user_email));
+		$data = $query->row_array();
+		$data['recovery_key'] = $recovery_key;
+		//echo '<pre>';print_r($data);die;
+		return $data;
+    }
+    
+    function verify_recovery($user_email,$recovery_key)
+	{
+		if($user_email=='' || $recovery_key=='')
+			return 0;
+		else
+		{
+			$query = $this->db->get_where('carbiz_users',array('user_email'=>$user_email,'recovery_key'=>$recovery_key));
+			return $query;
+		}
+	}
  }
