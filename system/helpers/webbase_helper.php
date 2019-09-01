@@ -43,4 +43,14 @@ if ( ! function_exists('is_banned'))
 				return FALSE;
 		}
 	}
+		if ( ! function_exists('get_car_type_icon'))
+	{
+		function get_car_type_icon($return_type="name",$name='default-icon.png')
+		{
+			if($return_type=="name")
+				return $name;
+			else
+				return base_url()."/uploads/car-icons/".$name;
+		}
+	}
 }
