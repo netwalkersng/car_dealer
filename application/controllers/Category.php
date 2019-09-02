@@ -35,6 +35,16 @@ class Category extends CI_Controller {
 		// $this->form_validation->set_error_delimiters('<div class="alert alert-danger" style="margin:0">', '</div>');
 	}
 
+	public function newcategory()
+	{	$this->load->helper('form');
+		$this->load->library('form_validation');
+		
+        $data['title']		= 'Motosellers.com | Add A Car Categories';		
+		$this->load->view('dashboards/templates/header', $data);
+		$this->load->view('dashboards/templates/admin_menu');
+		$this->load->view('dashboards/admin/newcategory_view');
+		$this->load->view('dashboards/templates/footer');
+	}
 		#load all services view with paging
 	public function index(){
 		$this->all();
@@ -47,6 +57,75 @@ class Category extends CI_Controller {
 		$this->load->view('dashboards/templates/admin_menu');
 		$this->load->view('dashboards/admin/all_category', $value);
 		$this->load->view('dashboards/templates/footer');
+	}
+
+	#add a service
+	public function addcategory()
+	{	$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('title', 'title', 'required');
+		//$this->form_validation->set_rules('featured_img', 'featured_img', 'required');					
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->newcategory();	
+		}
+		else
+		{
+			$this->load->helper('date');
+			$format = 'DATE_RFC822';
+			$time = time();
+			$data 					= array();			
+			$data['title'] 			= $this->input->post('title');
+			$data['parent'] 		= 0;
+			$data['fa_icon'] 		= "fa-car";
+			$data['featured_img'] 	= $this->upload('./uploads/car-icons', 'featured_img');
+			$data['create_time'] 	= $time;
+			$data['created_by']		= get_id_by_user_email($this->session->userdata('user_id'));
+			$data['status']			= 1;			
+			if(constant("ENVIRONMENT")=='demo')
+			{
+				$this->session->set_flashdata('msg', '<div class="alert alert-success">Data updated.[NOT AVAILABLE ON DEMO]</div>');
+			}
+			else
+			{	
+				$this->upload('./uploads/car-icons', 'featured_img');
+				$this->category_model->insert_category($data);
+				$this->session->set_flashdata('msg', '<div class="alert alert-success"> data inserted </div>');				
+			}
+			redirect(site_url('category'));		
+		}
+	}
+
+	#delete a service
+	public function delete($id='',$confirmation='')
+	{
+		if($confirmation=='')
+		{
+			// added on version 1.6
+			$category = $this->category_model->get_category_by_id($id);
+			$info = '"'.$category->title.'"';
+			$data['content'] = load_admin_view('confirmation_view',array('id'=>$id,'url'=>site_url('admin/category/delete'),'info'=>$info),TRUE);
+			load_admin_view('template/template_view',$data);
+			// end
+		}
+		else
+		{
+			if($confirmation=='yes')
+			{
+				if(constant("ENVIRONMENT")=='demo')
+				{
+					$this->session->set_flashdata('msg', '<div class="alert alert-success">Data updated.[NOT AVAILABLE ON DEMO]</div>');
+				}
+				else
+				{
+					$this->category_model->delete_category_by_id($id);
+					$this->session->set_flashdata('msg', '<div class="alert alert-success">'.lang_key('data_updated').'</div>');
+				}
+			}
+			redirect(site_url('admin/category/all'));		
+			
+		}		
 	}
 
 	#load edit service view
@@ -77,7 +156,6 @@ class Category extends CI_Controller {
 		else
 		{
 			$id = $this->input->post('id');
-
 			$data 					= array();
 			$data['title'] 			= $this->input->post('title');
 			$data['parent'] 		= 0;

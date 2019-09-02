@@ -29,6 +29,17 @@ if ( ! function_exists('is_banned'))
 				return FALSE;
 		}
 	}
+	if ( ! function_exists('get_id_by_username'))
+{
+	function get_id_by_user_email($user_id)
+	{
+		$CI = get_instance();
+		$query = $CI->db->get_where('carbiz_users',array('id'=>$user_id));
+		$row = $query->row();
+		return $row->id;
+		
+	}
+}
 
 	if ( ! function_exists('is_agent'))
 	{

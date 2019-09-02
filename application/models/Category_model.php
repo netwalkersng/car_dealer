@@ -28,6 +28,12 @@ class Category_model extends CI_Model
 		return $query;
 	}
 
+	function insert_category($data)
+	{
+		$this->db->insert('carbiz_categories',$data);
+		return $this->db->insert_id();
+	}
+
 	function get_category_by_id($id)
 	{
 		$query = $this->db->get_where('carbiz_categories',array('id'=>$id));

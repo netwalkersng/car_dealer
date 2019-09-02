@@ -16,7 +16,7 @@
         <h1>All Car Categories</h1>
     
         <hr>
-        <a class="btn btn-danger btn-sm" href="<?php echo site_url('newcategory');?>">New Category</a><br><br>
+        <a class="btn btn-danger btn-sm" href="<?php echo site_url('category/newcategory');?>">New Category</a><br><br>
 
         <?php echo $this->session->flashdata('msg');?>
         <?php if($posts->num_rows()<=0){?>
