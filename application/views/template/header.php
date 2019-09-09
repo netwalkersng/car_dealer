@@ -30,9 +30,9 @@
       
       <nav>
           <ul id="listItem">
-              <li>Home</li>
+              <a href="<?php echo base_url()?>"><li>Home</li></a>
               <li>Inventory</li>
-              <li>My Dashboard</li>
+              <a href="<?php echo base_url('dashboard')?>"><li>Dashboard</li></a>
               <li>Blog</li>
               <li>Sell My Car</li>
               <li>Shop</li>

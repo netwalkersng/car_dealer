@@ -35,8 +35,8 @@
       <span>Car Config</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-      <a class="dropdown-item" href="<?php echo site_url('category')?>">All Car Categories</a>
-      <a class="dropdown-item" href="<?php echo site_url('brand')?>">Brand Models</a>
+      <a class="dropdown-item" href="<?php echo site_url('category')?>">Car Categories</a>
+      <a class="dropdown-item" href="<?php echo site_url('brandmodels')?>">Car Brands</a>
       <a class="dropdown-item" href="">Brand Models</a>
       <a class="dropdown-item" href="">Car Conditions</a>
       <a class="dropdown-item" href="">Transmission Types</a>

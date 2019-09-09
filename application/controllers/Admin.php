@@ -21,6 +21,16 @@ class Admin extends CI_Controller {
 		$this->load->view('dashboards/templates/footer');
 	}
 
+	public function dashboard()
+	{	
+		
+		$this->global_func->page_protect();
+		$data['title']		= 'Motosellers.com | User Dashboard';		
+		$this->load->view('dashboards/templates/header', $data);
+		$this->load->view('dashboards/templates/user_menu');
+		$this->load->view('dashboards/admin/user_home');
+		$this->load->view('dashboards/templates/footer');
+	}
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('account_model');
